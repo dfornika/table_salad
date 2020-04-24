@@ -1,6 +1,6 @@
 # Table->SALAD
 
-Convert a `.csv` table to a [SALAD](https://github.com/common-workflow-language/schema_salad)
+Convert a `.csv` table to a [SALAD](https://github.com/common-workflow-language/schema_salad) schema
 
 ## Input
 
