@@ -1,0 +1,3 @@
+field_name,doc,type,iri
+sample_name,The user-defined name for the sample.,string,http://edamontology.org/data_3273
+collection_date,The date on which the sample was collected.,date,http://purl.obolibrary.org/obo/NCIT_C81286
