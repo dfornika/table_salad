@@ -2,7 +2,9 @@
 
 Convert a `.csv` table to a [SALAD](https://github.com/common-workflow-language/schema_salad) schema
 
-## Input
+## Schema Generation
+
+### Input
 
 A `.csv` file with the field headers: `field_name`, `doc`, `type`, `iri`
 
@@ -26,10 +28,10 @@ A `context.json` file with prefixes for any IRIs used in your table:
 
 (optionally) a name for your schema class (defaults to `SchemaClass` if not provided.
 
-## Usage
+### Usage
 
 ```
-table_salad.py --input schema_table.csv --context context.json --name SampleSchema
+table_salad_schema_gen.py --input schema_table.csv --context context.json --name SampleSchema
 ```
 
 ```yaml
@@ -52,4 +54,14 @@ $graph:
   type: record
   name: SampleSchema
   documentRoot: 'true'
+```
+
+## Data Validation
+
+### Input
+
+### Usage
+
+```
+table_salad_validate.py
 ```
