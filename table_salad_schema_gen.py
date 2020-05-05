@@ -5,8 +5,6 @@ import csv
 import yaml
 import json
 
-from collections import OrderedDict
-
 from pprint import pprint
 
 DEFAULT_CONTEXT = {
@@ -19,6 +17,7 @@ DEFAULT_CONTEXT = {
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 }
 
+
 def compact_iri(iri_to_compact, context):
     compact_iri = None
     for prefix, iri in context.items():
@@ -26,17 +25,19 @@ def compact_iri(iri_to_compact, context):
             compact_iri = iri_to_compact.replace(iri, prefix + ":")
     return compact_iri
 
+
 def parse_context(path_to_context):
     with open(path_to_context) as f:
         context = json.load(f)
-        context = {k.encode('utf-8'): v.encode('utf-8') for k, v in context.items()}
     return context
+
 
 def merge_contexts(default_context, additional_context):
     for prefix, iri in additional_context.items():
         if prefix not in default_context.keys():
             default_context.update({prefix:iri})
     return default_context
+
 
 def parse_table(path_to_table):
     parsed_table = []
@@ -52,7 +53,6 @@ def main(args):
     parsed_table = parse_table(args.input)
     if (args.context):
         provided_context = parse_context(args.context)
-        pprint(provided_context)
         context = merge_contexts(DEFAULT_CONTEXT, provided_context)
     else:
         context = DEFAULT_CONTEXT

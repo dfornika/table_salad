@@ -11,7 +11,9 @@ Eg:
 |field_name       | doc                                         | type   | iri                                        |
 |-----------------|---------------------------------------------|--------|--------------------------------------------|
 | sample_name     | The user-defined name for the sample.       | string | http://edamontology.org/data_3273          |
-| collection_date | The date on which the sample was collected. | date   | http://purl.obolibrary.org/obo/NCIT_C81286 |
+| collection_date | The date on which the sample was collected. | string | http://purl.obolibrary.org/obo/NCIT_C81286 |
+
+(Note that SALAD has a limited set of [primitive types](https://www.commonwl.org/v1.0/SchemaSalad.html#PrimitiveType) available to choose from.)
 
 A `context.json` file with prefixes for any IRIs used in your table:
 
