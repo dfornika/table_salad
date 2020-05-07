@@ -66,7 +66,7 @@ def main(args):
     else:
         output['$graph'][0]['name'] = 'SchemaClass'
 
-    output['$graph'][0]['documentRoot'] = 'true'
+    output['$graph'][0]['documentRoot'] = True
     output['$graph'][0]['type'] = 'record'
     
     fields = {}
